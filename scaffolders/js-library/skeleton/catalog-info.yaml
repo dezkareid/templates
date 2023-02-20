@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.scope + "/" + values.name if values.scope else values.name }}
+  {%- if values.description %}
+  description: ${{values.description}}
+  {%- endif %}
+spec:
+  type: library
+  lifecycle: production
