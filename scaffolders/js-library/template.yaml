@@ -69,7 +69,7 @@ spec:
           name: ${{ parameters.package.name }}
           description: ${{ parameters.package.description }}
           private: ${{ parameters.package.private }}
-          repoUrl: ${{ parameters.repository.repoUrl }}
+          repoUrl: ${{ "https://" + (parameters.repository.repoUrl | parseRepoUrl).host + "/" + (parameters.repository.repoUrl | parseRepoUrl).owner + "/" + (parameters.repository.repoUrl | parseRepoUrl).repo}}
           directory: ${{ parameters.repository.targetPath + "/" + parameters.package.name if parameters.repository.targetPath else parameters.package.name }}
 
     - id: publish
