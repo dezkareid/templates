@@ -37,6 +37,7 @@ spec:
             private:
               title: Package access
               type: boolean
+              default: false
               description: Will be upload to some artifactory?
 
     - title: Repository data
