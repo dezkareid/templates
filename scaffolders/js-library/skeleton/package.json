@@ -4,7 +4,7 @@
   "main": "./index.js",
   "exports": "./index.js",
   "private": ${{ values.private }},
-  {%- if not values.private % }
+  {%- if not values.private %}
   "publishConfig": {
     "access": "public"
   },
