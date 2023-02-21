@@ -78,7 +78,7 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: ${{ parameters.repository.repoUrl }}
-        title: "Create new library: ${{parameters.package.name}}"
+        title: "Create new library: ${{ parameters.package.scope + "/" + parameters.package.name if parameters.package.scope else parameters.package.name }}"
         branchName: create-${{ parameters.package.scope + "/" + parameters.package.name if parameters.package.scope else parameters.package.name }}
         description: |
           # New project: ${{ parameters.package.scope + "/" + parameters.package.name if parameters.package.scope else parameters.package.name }}
